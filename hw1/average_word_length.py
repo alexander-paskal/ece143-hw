@@ -22,7 +22,7 @@ those explicitly mentioned in the problem description.
 from collections import Counter
 
 
-def average_word_length(instring: str, unique: bool = False) -> float:
+def compute_average_word_length(instring: str, unique: bool = False) -> float:
     """
     Computes the average word length for a string. If the unique flag is active,
     only looks at repeat words once.
