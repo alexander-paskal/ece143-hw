@@ -62,5 +62,5 @@ if __name__ == '__main__':
     instring = input("Enter your string. ")
     is_unique = lambda x: True if x == 'y' else False
     unique = is_unique(input("Analyze only unique words? y = yes, n = no: "))
-    print(average_word_length(instring, unique))
+    print(compute_average_word_length(instring, unique))
 

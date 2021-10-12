@@ -1,0 +1,66 @@
+# ok this is far too much to write down at the same time
+# look up toolz, functools options,
+python-and-functional-programming
+look to use reduce whenever speed is required
+
+
+stringIO is a python object that acts like a regular file,
+so you can run code using pythons file api on computers with no filesystem
+
+
+
+commands file objects, __enter and __exit__
+this activity opens the file
+exit is closing the file
+with statement calls the __enter__ and __exit__ dunders
+
+
+serialization of objects is taking an object in memory, coming up
+with a representation of them that can be transmitted and from which
+the objects can be reinstantiated
+
+pickle.dump(mylist, 'wb')  - the write b is a set of
+
+f = open('myfile.dat', 'wb')
+pickle.dump(mylist, f)
+f.close()
+
+serialization is just giving a skeleton that python can reassemble, sort of a compression
+of python objects
+
+pickling functions can be tricky since functions can have references to variables outside
+of the function
+
+to get around this, use the module dill
+Mike McKerns, read his code
+Mattew Rocklin
+
+With large scale problems, there's an issue with uncertainty computation
+
+to send stuff BETWEEN different machines, he uses dill
+
+Instead of transferring data, you transfer code, since it's much smaller
+
+If you are using CPython, you can use marshal library
+
+
+import dill
+import pickle
+def foo(x): return x*x
+
+use dill.extend(False) To retain normal pickling
+
+
+--------------------------------------------------------------
+
+People use horizontal scaling (more, cheaper machines) instead of vertical scaling (bigger machines iwth more memory)
+and then you move your serialized program onto that machine.
+
+Q - What's a problem that requires a vertically scalable solution instead of an horizontal one?
+A - If there's a lot of communication necessary. If I have to solve diff eqs analyzing pressure on squares of the aircraft, the
+information is necessary for solving other problems. So tightly coupling of information, you need a vertically scaled solution.
+
+Read up to Generators for the next section
+
+
+
