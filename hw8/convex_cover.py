@@ -104,10 +104,14 @@ if __name__ == '__main__':
     axes.scatter(xc, yc)
 
     result = find_convex_cover(pvertices, clist)
-    print(result)
 
+    print("Test Case Provided\n")
+    print("prediction | label | error | threshold")
+    print("-" * 15)
     for predict, label in zip(result, [0, 0, 0.10297280518543134, 0, 0.06374182913818943, 0.0684588720095565, 0.07987784828713643]):
-        print(predict - label, predict - label < EPSILON)
+        error = predict - label
+        row = [str(predict), str(label), str(error), str(error < EPSILON)]
+        print(" | ".join(row))
 
     for c, radius in zip(clist, result):
         cc = plt.Circle(c, radius, alpha=0.2)
@@ -115,4 +119,6 @@ if __name__ == '__main__':
 
     plt.xlim(0.2, 1)
     plt.ylim(0.2, 1)
+    plt.title("Minimum-area Circles Covering All Vertices")
+    plt.legend(["Vertices", "Circle Centers"])
     plt.show()

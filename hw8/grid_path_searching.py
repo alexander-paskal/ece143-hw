@@ -136,11 +136,12 @@ if __name__ == '__main__':
     BLOCKS = [(0, 3), (1, 1), (1,3), (3,3), (4,3), (6,3), (7,3), (8,3),(2,6), (3,6), (4,6), (5,6), (6,6)]
     START = (0,0)
     TARGET = (M-1, N-1)
-    print("number of paths:", count_paths(M, N, BLOCKS))
+
 
     tree = build_tree(START,M, N, BLOCKS)
     print_grid(M, N, BLOCKS)
     print("--------------------------")
+    print("number of paths:", count_paths(M, N, BLOCKS), "\n\n")
     paths = dfs_search(tree, target=TARGET)
     for path in paths:
         print_path_on_grid(M, N, BLOCKS, path)

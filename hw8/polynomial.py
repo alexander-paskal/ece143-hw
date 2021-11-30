@@ -257,6 +257,11 @@ class Polynomial:
 if __name__ == '__main__':
     p = Polynomial({0: 8, 1: 2, 3: 4})  # keys are powers, values are coefficients
     q = Polynomial({0: 8, 1: 2, 2: 8, 4: 4})
+
+    print("Exact repr output not important, the values are the point of the exercise\n")
+
+    print("Expected | Actual ")
+    print("---------------------------")
     print(repr(p), "| 8 + 2x + 4x^(3)")
     print(p * 3, "| 24 + 6x + 12x^(3)")
     print(3 * p, "| 24 + 6x + 12x^(3)") # multiplication is commutative!
@@ -276,6 +281,7 @@ if __name__ == '__main__':
     print(Polynomial({2:1, 0:-4}) / Polynomial({1:1, 0:-2}), "| 2 + x")
     print(Polynomial({2:1, 0:-9})/ Polynomial({1:1, 0:3}))
 
+    # long division tests, cause this part was tricky
     a = Polynomial({0:1, 1:4, 2:1})
     b = Polynomial({1:2})
     c = Polynomial({0:5, 2:3})
@@ -294,4 +300,4 @@ if __name__ == '__main__':
     except NotImplementedError:
         pass
 
-    print("Division tests passed")
+    print("\nLong division tests passed")

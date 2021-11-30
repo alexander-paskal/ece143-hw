@@ -76,9 +76,13 @@ if __name__ == '__main__':
     # print(next_permutation((3,2,1,0)))
     from itertools import permutations
 
-    p = (1,2,3, 4, 5)
+    p = (1,2,3,4,5)
 
     ps = permutations(p)
+
+    print("Start permutation:", p)
+    print("\nExpected | Actual | Matching")
+    print("-"*20)
 
     for i in range(10):
         p_n = next(ps)

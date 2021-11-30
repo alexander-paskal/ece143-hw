@@ -169,6 +169,8 @@ if __name__ == '__main__':
 
     SEQ = [3, 0, 1, 3, 0, 5]
 
+    print(f"Sequence:\n{SEQ}")
+
     nbds = list(convex_neighborhoods(SEQ))
     print("convex neighborhoods:")
     for nbd in nbds:

@@ -47,15 +47,19 @@ def solvefrob(coefs, b):
     :return:
     """
 
+    # input type validation
     for elem in coefs:
         assert isinstance(elem, int)
         assert elem > 0
 
     assert isinstance(b, int)
     assert b > 0
+
+    # construct candidate matrix C of dims MxN where N = len(coefs)
     arr = None
     for i, coef in enumerate(coefs[::-1]):
-        max = b // coef
+        max = b // coef  # restricts the max value of candidate solution at
+        # a given index to bound solution space, vastly increases performance
         r = np.arange(max+1)[:, None]
         if arr is None:
             arr = r
@@ -64,16 +68,14 @@ def solvefrob(coefs, b):
             new_arr = np.concatenate([arr for _ in range(len(r))])
             arr = np.concatenate([new_r, new_arr], axis=1)
 
+    # extract candidate solutions where C * coefs == b
     out = np.matmul(arr, coefs)
     results = arr[out == b].tolist()
-    results = [tuple(thing) for thing in results]
-
+    results = [tuple(result) for result in results]
     return results
 
 
-
 if __name__ == '__main__':
-
     for f in [solvefrob]:
         coefs = [1,2,3,5,6,4,6,4]
         b = 15
@@ -81,6 +83,9 @@ if __name__ == '__main__':
         results = f(coefs, b)
         e = time.time()
         print(f"{f.__name__}, time: {e-s} seconds")
-
+        print(f"Coeffs = {coefs}, B = {b}")
+        print(f"number of solutions: {len(results)}\n")
+        print("solution | coeffs | dot product")
+        print("-"*20)
         for result in results:
-            print(result, coefs, np.dot(result, coefs))
+            print("{} | {} | {}".format(result, coefs, np.dot(result, coefs)))
