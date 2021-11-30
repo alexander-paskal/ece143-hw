@@ -167,7 +167,10 @@ def compute_neighborhood_value(nbd):
 
 if __name__ == '__main__':
 
+    ##### Arguments
     SEQ = [3, 0, 1, 3, 0, 5]
+    ##### End Arguments
+
 
     print(f"Sequence:\n{SEQ}")
 

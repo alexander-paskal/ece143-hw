@@ -83,6 +83,7 @@ def find_convex_cover(pvertices,clist):
 if __name__ == '__main__':
     import matplotlib.pyplot as plt
 
+    ##### Arguments
     pvertices = [[0.573, 0.797],
                        [0.688, 0.402],
                        [0.747, 0.238],
@@ -97,6 +98,9 @@ if __name__ == '__main__':
                   (0.6315848053622062, 0.7730550996176769),
                   (0.7348437356868305, 0.41342916986639894),
                   (0.7597683050755328, 0.31729154508140384)]
+    ######## End Arguments
+
+
     figure, axes = plt.subplots()
     x, y = zip(*pvertices)
     axes.scatter(x, y)

@@ -76,16 +76,19 @@ def solvefrob(coefs, b):
 
 
 if __name__ == '__main__':
-    for f in [solvefrob]:
-        coefs = [1,2,3,5,6,4,6,4]
-        b = 15
-        s = time.time()
-        results = f(coefs, b)
-        e = time.time()
-        print(f"{f.__name__}, time: {e-s} seconds")
-        print(f"Coeffs = {coefs}, B = {b}")
-        print(f"number of solutions: {len(results)}\n")
-        print("solution | coeffs | dot product")
-        print("-"*20)
-        for result in results:
-            print("{} | {} | {}".format(result, coefs, np.dot(result, coefs)))
+    ##### Arguments
+    coefs = [1,2,3,5,6,4,6,4]
+    b = 15
+    ##### End Arguments
+
+
+    s = time.time()
+    results = solvefrob(coefs, b)
+    e = time.time()
+    print(f"{solvefrob.__name__}, time: {e-s} seconds")
+    print(f"Coeffs = {coefs}, B = {b}")
+    print(f"number of solutions: {len(results)}\n")
+    print("solution | coeffs | dot product")
+    print("-"*20)
+    for result in results:
+        print("{} | {} | {}".format(result, coefs, np.dot(result, coefs)))

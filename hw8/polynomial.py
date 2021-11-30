@@ -255,6 +255,9 @@ class Polynomial:
 
 
 if __name__ == '__main__':
+
+    # No arguments here, but feel free to use this to help your kid with their algebra 2 hw
+
     p = Polynomial({0: 8, 1: 2, 3: 4})  # keys are powers, values are coefficients
     q = Polynomial({0: 8, 1: 2, 2: 8, 4: 4})
 

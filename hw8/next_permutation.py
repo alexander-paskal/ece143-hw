@@ -71,12 +71,13 @@ def next_permutation(t: tuple) -> tuple:
         
 
 if __name__ == '__main__':
-    # print(next_permutation((2,3,1)))
-    # print(next_permutation((0, 5, 2, 1, 4, 7, 3, 6)))
-    # print(next_permutation((3,2,1,0)))
+
     from itertools import permutations
 
+
+    ##### Arguments
     p = (1,2,3,4,5)
+    ##### End Arguments
 
     ps = permutations(p)
 

@@ -130,10 +130,14 @@ def print_path_on_grid(m, n, blocks, path):
 
 if __name__ == '__main__':
 
-
+    ###### Arguments
     M = 9
     N = 10
     BLOCKS = [(0, 3), (1, 1), (1,3), (3,3), (4,3), (6,3), (7,3), (8,3),(2,6), (3,6), (4,6), (5,6), (6,6)]
+    ###### End Arguments
+
+
+
     START = (0,0)
     TARGET = (M-1, N-1)
 
